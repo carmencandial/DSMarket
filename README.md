@@ -1,3 +1,44 @@
+# DSMarket: from daily sales to replenishment decisions
+
+**Master's final project** · Master in Data Science & AI · Nuclio Digital School, Barcelona (2026)
+
+End-to-end analytics system built on the sales history of DSMarket, a retail chain with 10 stores
+in 3 cities and 3,049 products. It goes from the raw files to the quantity of each product that
+each store should order.
+
+**58,327,370 daily observations · 30,490 store-item series · 2011-2016**
+
+### What it covers
+
+- **Store and product analysis:** sales patterns by city and store, and product clustering.
+- **Demand forecasting:** 28-day forecasts for all 30,490 series with global gradient boosting
+  models (LightGBM, XGBoost), benchmarked against Prophet and SARIMA.
+- **Replenishment policy:** order quantities from forecast quantiles, by ABC/XYZ segment.
+- **Price elasticity:** panel model with fixed effects, plus a falsification test.
+- **Engineering:** three-layer DuckDB lakehouse, data contracts, pipeline orchestrator,
+  FastAPI service, Streamlit app and Power BI dashboard.
+
+### Key results
+
+- Forecasting the total demand of the replenishment cycle, instead of day by day, cuts the mean
+  absolute error by **15.7%** and removes a −7.4% bias.
+- The replenishment policy raises the service level from **86.6% to 96.2%** at 62.5% lower cost.
+- Price elasticity is **not identifiable** with this data, and a falsification test shows it.
+- Only 5 of the 15 best-selling products are shared by the three cities.
+
+### Tech stack
+
+Python · pandas · LightGBM · XGBoost · Prophet · scikit-learn · DuckDB · FastAPI · Streamlit · Power BI
+
+### Team
+
+Carmen Candial, Juan Pablo Ceruso and Adrià Viñas. Tutor: Raquel Revilla.
+Original team repository: [JuanCeruso/DSMarket](https://github.com/JuanCeruso/DSMarket)
+
+The full report is in [`memoria/Memoria_DSMarket.pdf`](memoria/Memoria_DSMarket.pdf) (in Spanish).
+The rest of this README is in Spanish.
+
+---
 # DSMarket — de la venta diaria a la decisión de reposición
 
 Trabajo de Fin de Máster · Máster en Data Science & Inteligencia Artificial · Nuclio Digital
